@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.효자::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+h1 {
+    background-color: #0C359E;
+    text-align: center;
+    color: #bfc5c7;
+}
+
+.전체 {
+    background-color: #AD88C6;
+    width: 1200px;
+    margin: 50px auto 0; 
+    /* 자식인 첫째, 막내한테 동시에margin을 주면 병합현상이 생기므로, 
+    전체(큰부모)한테 margin,padding으로 공간을 줘야함 
+    전체영역을 모아줄때는 padding을 이용한다.*/
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+.전체 .첫째 {
+    width: 1000px;
+    background-color: #FFE6E6;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.전체 .첫째 .child {
+    width: 21.25%;
+    height: 200px;
+    background-color: #3FD1CB;
+    float: left;
+    margin-right: 5%;
+}
+
+.전체 .첫째 .가비 iframe{
+    position: relative;
+    left: 0;top: 0;
+    width: 100%; height: 100%;
+}
+
+.전체 .첫째 .가비 .iframe {
+    position: relative;
+    left: 100%; /* 부모를 꽉 채우기 위해 100%로 함 */
+    top: 100%;
+}
+
+.전체 .첫째 .을이{position: relative;}
+.전체 .첫째 .을이 .center {
+    background-color: #000;
+    color: #fff;
+    width: 100px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px; /* 라운드로 된 선(border)가 생김 */
+
+    /* ★position과 transform은 한 세트임★ */
+    position: absolute; left: 50%; top: 50%; /* 부모의 기준으로부터 50%씩 가서 애매한 곳에 위치함 */
+    transform: translate(-50%, -50%); /* "%"값으로 주면 %의 기준이 자기 자신임. */
+    /* transform: 기준으로부터 이동할 수 있도록 하는 명령어
+    transform: translate(x값, y값) */
+}
+
+.전체 .첫째 .벼리 {}
+.전체 .첫째 .벼리 .iframe {
+    width: 200px;
+    height: 150px;
+    position: absolute; left: 50%; top: 50%; /* 부모의 넓이(left)/부모의 높이(top) */
+    transform: translate(-50%, -50%); /* %가 있을 때는 나의 기준 */ 
+    /* margin, padding에서 사용하는 % ---> 부모의 넓이 */
+}
+
+.전체 .첫째 .정이 {
+    position: relative;
+    margin-right: 0%;
+}
+
+.전체 .첫째 .정이 iframe{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.전체 #둘째{
+    width: 1000px;
+    background-color: #0C359E;
+    margin: 0 auto;
+    margin-top: 50px; /* '첫째'한테도 margin-bottom 50px을 주더라도 총 100px이 떨어지지 않음. 마진의 위아래(top, bottom) 값만 둘 중에 큰 값이 적용됨
+    좌우(left, right)값은 동시에 주면 총합만큼 조절됨*/
+    padding: 20px;
+    box-sizing: border-box; /* 20px을 둘째의 넓이 1000px안에 포함시킴 */
+}
+
+.전체 #둘째 .child{
+    width: 45%;
+    background-color: crimson;
+    float: left;
+    height: 300px;
+}
+
+
+.전체 #둘째 .둘일{
+    /* background-image: url(https://dimg.donga.com/wps/NEWS/IMAGE/2024/01/23/123180288.2.jpg); */
+    background-image: url(https://cdn.salgoonews.com/news/photo/202402/38444_166250_2123.jpg);
+    background-size: cover; /* 배경이미지의 크기대로 나태내주는 명령어 */
+    background-position: center; /* 이미지를 가운데 오도록 하는 명령어
+    x,y값이 있는데 하나만 적으면 둘다 center */
+    margin-right: 10%; 
+    position: relative;
+    /* margin, padding의 넓이는 부모의 넓이를 기준으로 persentage를 줌 */
+    overflow: hidden; 
+}
+ 
+.전체 #둘째 .둘일 .text{
+    position: absolute;
+    left: -100%; top: 0; 
+    width: 100%; height: 100%;
+    background-color: rgba(70, 138, 70, 0.2);
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.전체 #둘째 .둘일:hover .text{left: 0;}
+
+/* center안에 absolute가 있는데 부모인 text한테도 position이 있어서 적용된것.
+부모가 absolute이기 때문에 text가 사라지면 center도 사라짐. */
+.전체 #둘째 .둘일 .text .center{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+
+.전체 #둘째 .둘이{
+    position: relative;
+    background-image: url(https://sitem.ssgcdn.com/36/49/25/item/1000527254936_i1_750.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.전체 #둘째 .둘이 .text{
+    position: absolute;
+    left: 0; bottom: -60px; /* '설명글'이라는 글이 왼쪽 아래에 붙음 */
+    width: 100%;
+    background-color: rgba(70, 138, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.전체 #둘째 .둘이:hover .text{bottom: 0;} /* 부모인 '둘이'한테 마우스를 올렸을 때, text(설명글 박스)가 밑에서 올라와야하므로, 둘이한테 hover를 붙인다. */

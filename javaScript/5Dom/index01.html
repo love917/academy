@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h1 id="head"><p><a href="#">고양이</a></p></h1><ul><li><a href="#">li1</a></li><li><a href="#">li2</a></li><li><a href="#">li3</a></li><li><a href="#">li4</a></li></ul>
+
+    <script>
+        //📜Dom이란?
+        //📜Document Object Model의 약자 --> 웹의 문서와 웹의 태그와 관련된 객체를 의미한다.
+        let head1 = document.getElementById("head")
+        console.log(head1)
+
+        //결과는 같다.
+        //window.onload = function(){}//옛날방식. 함수 하나만 적을 수 있다.= 호환성이 좋다.
+        //window.addEventListener("load",function(){})//요즘방식. 여러개 적을 수 있다.
+
+        //head1.onlick = function(){}
+        //head1.addEventListener("click",function(){})
+
+        window.onload = function(){//window에 있는 img를 다 읽었다면 실행해라. 
+            //p 앨리먼트 생성 createElement()  ---> 태그 생성
+            let eleNode = document.createElement("p")
+
+            //텍스트 노드 생성 createTextNode() ---> 텍스트 생성
+            let txtNode = document.createTextNode("hello")
+
+            //붙이기 <p>hello</p> --> p태그 안에 hello를 넣고싶을때
+            eleNode.appendChild(txtNode)
+            console.log(eleNode)
+            document.body.appendChild(eleNode)//append :첨부하다
+        }
+    </script>
+</body>
+</html>

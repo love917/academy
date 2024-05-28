@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //📜이미지 노드
+        //1️⃣이미지 태그만들기
+        //2️⃣속성추가 ==> 2가지 방식 1) . 2)setAttribute()
+        //3️⃣객체의 자식요소로 추가하기
+        //-------------------------------------
+
+
+        //1️⃣이미지 태그만들기
+        window.onload = function(){//onload : 안에있는 데이터를 다 읽었으면
+            //img 엘리먼트 생성
+            let imgNode = document.createElement("img")
+            console.log(imgNode)
+        
+
+        //2️⃣속성추가 : 생성된 이미지 태그(엘리먼트)에 속성추가
+        //첫번째 방법 
+        imgNode.src="https://img1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/9wzv/image/trkV1jp7R9V5xDGflfRNqzdRc80.jpg"
+        imgNode.width=400;
+        imgNode.height=300;
+        imgNode.alt="이미지";
+        console.log(imgNode)
+
+        //3️⃣객체의 자식요소로 추가하기
+        document.body.appendChild(imgNode)
+        }
+        //-------------------------------------
+        //2️⃣속성추가 : 생성된 이미지 태그(엘리먼트)에 속성추가
+        //두번째 방법 : setAttribute()메서드를 이용하여 속성을 추가
+        //장점 : 사용자 정의 속성을 직접 만들어서 추가할 수 있다.
+        window.onload = function(){
+            let imgNode = document.createElement("img");
+            imgNode.setAttribute("src","https://img.khan.co.kr/news/2023/01/02/news-p.v1.20230102.1f95577a65fc42a79ae7f990b39e7c21_P1.png")
+            imgNode.setAttribute("width",250)
+            imgNode.setAttribute("height",400)
+            imgNode.setAttribute("green","학원")
+        
+        console.log(imgNode)
+
+        document.body.appendChild(imgNode)
+        }
+
+    </script>
+</body>
+</html>

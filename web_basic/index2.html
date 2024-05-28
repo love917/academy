@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .부모 {
+            background-color: mediumblue;
+            /* border:두께 스타일 컬러 */
+            border: 5px solid red;
+            width: 1000px;
+            margin: auto;
+        }
+
+        .일동 {
+            background-color: #ca96ec;
+            width: 300px;
+            float: right;
+        }
+
+        .이동 {
+            background-color: cadetblue;
+            width: 300px;
+            float: right;
+        }
+
+        .삼동 {
+            background-color: dodgerblue;
+            width: 300px;
+            float: right;
+        }
+
+
+        .동생 {background-color: #ca96ec; width: 1000px; margin: 100px auto 0;}
+        .동생 .동생자식{width: 300px; height: 300px; float: left; background-color: aqua;}
+        .동생>.일철{margin-right: 20px;}
+        .동생>.이철{margin-right: 20px;}
+        .동생>.삼철 img{width: 100%; height: 100%;}
+
+        .효자 {
+            clear: both;
+        }
+        
+        .영역{background-color: #35374B;}
+        .영역 .세아들{background-color: #50727B;}
+        .영역 .세아들 em{background-color: #78A083; width: 20px;}
+        .영역 .세아들 strong{background-color: #E8C872; width: 100px; 
+            display: inline-block;}
+
+        .막내{background-color: #FF407D; width: 1000px;
+        margin-top: 100px;
+        margin:100px auto 0;}
+        .막내 .child{width: 25%; background-color: #FFCAD4;
+            float: left;}
+        
+        /* .D .child.child1{} = .D .child1{} */
+        .막내 .child1{width: 25%; background-color: #FFCAD4; float: left;}
+        .막내 .child2{width: 25%; background-color: #FFCAD4; float: left;}
+        .막내 .child3{width: 25%; background-color: #FFCAD4; float: left;}
+        .막내 .child4{width: 25%; background-color: #FFCAD4; float: left;}
+        /* clear:both;는 block 요소여야 적용됨. 그래서 display를 이용하여 block 요소로 바꿔줌 */
+        /* after와 content는 항상 짝지로 적어야함. 얘가 효자 역할을 하는 것 */
+        .막내 ::after{content: ""; clear: both; display: block;}
+
+        /* ::before나 ::after는 css로 만드는 가상공간. 화면에는 나타남, 인라인 요소. */
+        /*   .D::before{content: "A";}
+             .D::after{content: "B";} */
+        /* !!!!!막내한테 marging right를 안주는 이유가 무엇인가!!!!!! */
+
+
+        /* 정렬하기 : float: left/right/none; */
+        /* 자식은 부모의 넓이를 따라감 */
+        /* 부모는 자식의 높이를 따라감 */
+        /* 한줄 복사 : alt + shift + 방향키(위/아래) */
+        /* 주석처리 : shift + alt + A */
+    </style>
+</head>
+
+<body>
+    <div class="A 부모">
+        <div class="B 일동">일동</div>
+        <div class="C 이동">이동</div>
+        <div class="D 삼동">삼동</div>
+        <div class="E 효자"></div>
+    </div>
+
+    <div class="B 동생">
+        <div class="동생자식 일철">일철</div>
+        <div class="동생자식 이철">이철</div>
+        <div class="동생자식 삼철">
+            <img src="https://i.namu.wiki/i/cX_teP-xAC6wdC4zaOo7TgSohKXMnmdKcXDKuh5MSK94kAU2_JDA7vFzx8Z42l10wbLlh9oP0zk02yPiBOAd_Q.webp" alt="이미지오류">
+        </div>
+        <div class="효자"></div>
+    </div>
+
+    <div class="C 영역">
+        <div class="세아들">
+            세<em>좋은</em>아들
+            <strong>있어요.</strong>
+        </div>
+    </div>
+
+    <div class="막내 약">
+        <div class="child child1">childl</div>
+        <div class="child child2">child2</div>
+        <div class="child child3">child3</div>
+        <div class="child child4">child4</div>
+        <div class="약"></div>
+    </div>
+</body>
+
+</html>

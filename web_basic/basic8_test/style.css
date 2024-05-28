@@ -1,0 +1,76 @@
+*{margin: 0;padding: 0;}
+
+.medi::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.wrap{padding-top: 100px;}
+#big{
+    width: 1000px;
+    margin: 0 auto ;
+    background-color: dimgrey;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#big .cat1 .cute{
+    width: 21.25%; height: 200px;
+    float: left;
+    margin-right: 5%;
+    background-color: darkgreen;
+}
+#big .cat1 .dd{
+    margin-right: 0;
+}
+
+
+#big .cat2{
+    width: 900px;
+    background-color: coral;
+    margin: 50px auto 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#big .cat2 .kitty1{}
+#big .cat2 .kitty1 .sleepy{
+    width: 21.25%; height: 200px; 
+    /* 넓이가 900px라도 percentage는 100%이므로 값음 똑같음 */
+    float: left;
+    background-color: darkgreen;
+    margin-right: 5%;
+    box-sizing: border-box;
+}
+
+#big .cat2 .kitty1 .od{margin-right: 0;}
+
+
+#big .cat2 .kitty2{
+}
+#big .cat2 .kitty2 .oaa{
+    background-color: darkseagreen;
+    width: 880px;
+    margin: 10px auto 0;/* (위, 좌우, 아래) */
+    padding: 30px 0;
+    color: black;
+    text-align: center;
+}
+
+#big .cat3{
+    margin: 50px auto 0;
+    box-sizing: border-box;
+}
+
+#big .cat3 .angry{
+    background-color: darkgreen;
+    float: left;
+}
+
+#big .cat3 .katty1{
+    width: 75%; height: 200px;
+    margin-right: 5%;
+}
+#big .cat3 .katty2{
+    width: 20%; height: 200px;
+    margin-right: 0;
+}

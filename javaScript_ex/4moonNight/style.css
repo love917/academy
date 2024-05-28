@@ -1,0 +1,24 @@
+*{margin: 0;padding: 0;}
+body{background-color: #0a2a44;}
+section{
+    position: relative; height: 100vh; overflow: hidden;
+    display: flex; justify-content: center; align-items: center;
+}
+section img{
+    width: 100%;height: 100%;
+    position: absolute; left: 0;top: 0;right: 0;bottom: 0;
+}
+section h2{color: #fff;font-size: 180px;position: relative;}
+/* h2가 혼자 자식이고 막내라서 position만 넣어주면 힘이 더 세서 텍스트가 올라옴 */
+
+#road{z-index: 50;}
+section::before{ /* 그라디언트 */
+    content: "";
+    position: absolute; left: 0; bottom: 0;
+    width: 100%; height: 100px;
+    z-index: 100;
+    background-image: linear-gradient(0deg,#0a2a43, transparent);
+}
+section:nth-child(2){
+    flex-direction: column;
+}

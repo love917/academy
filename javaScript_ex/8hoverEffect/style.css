@@ -1,0 +1,78 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+img{width: 100%;height: 100%;}
+
+
+/* preview */
+.hoverWrap{position: relative; height: 100vh;padding: 0 2em;}/* em : font사이즈 기준 16px */
+.preview{
+    position: absolute; top: 0; left: 0;
+    width: 255px;height: 275px;
+    z-index: 10;
+    pointer-events: none;/* 나왔다가 없어지는 object이기 때문에 줌 */
+}
+.preview .preview-img{ /* 따라다니는 이미지 */
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+.preview .preview-img-2{top: 20px; left: 20px;}
+.preview-img img{position: absolute; top: 0;}
+
+/* menu */
+.menu{padding: 20em 0;} /* em:20x16 */
+.menu-item{
+    width: 100%;
+    display: flex; align-items: center;
+}
+.menu-item p{
+    position: absolute;top: 0;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.menu-item .info,
+.menu-item .name,
+.menu-item .tag{position: relative; overflow: hidden;}
+
+.menu .info p:nth-child(2),
+.menu .name p:nth-child(2),
+.menu .tag p:nth-child(2){
+    top: 100%; color: #000;
+}
+
+.menu:hover .info p:nth-child(1),
+.menu:hover .name p:nth-child(1),
+.menu:hover .tag p:nth-child(1){
+    position: relative;
+    overflow: hidden;
+    color: rgb(165,165,165);
+}
+    
+
+/* 양쪽에만 글자가 작음 */
+.menu-item .info,
+.menu-item .tag{
+    flex:1;/* flex:1 --> 비율 */
+    height: 14px;
+    line-height: 14px;
+}
+
+/* info */
+.menu-item .info{}
+.menu-item .info p{}
+
+/* name */
+.menu-item .name{
+    flex:4; height: 60px;
+    font-size: 60px;
+    text-align: center;
+    line-height: 1;
+}
+.menu-item .name p{}
+
+/* tag */
+.menu-item .tag{
+    text-align: right;
+}
+.menu-item .tag p{}

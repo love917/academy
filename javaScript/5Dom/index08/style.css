@@ -1,0 +1,11 @@
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+
+.pic-box{display: flex; flex-wrap: wrap;}
+.pic-box .pic_wrap{}
+.pic_wrap ul{display: flex; gap: 10px;
+}
+.pic_wrap ul li{width: 50%;}
+.pic_wrap ul li img{height: 150px;}
+.pic_wrap>div{margin-top: 5px;}
+.pic_wrap>div img{width: 100%;}

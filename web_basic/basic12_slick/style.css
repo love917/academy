@@ -1,0 +1,64 @@
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+
+.main img{width: 100%;}
+.main .slick-arrow{ 
+    position: absolute; /* positon을 안주면 이상한 위치에 가있기 때문에 지정함 */
+    top: 50%; 
+    transform: translateY(-50%); /* Y값만 필요하기 때문. =내 반만큼 공간을 내어줌 */
+    z-index: 100;
+}
+.main .slick-prev{
+    left: 0;
+    visibility: hidden; /* hidden :부모를 안보이게 함 */
+}
+.main .slick-prev::after{/* 화면상의 왼쪽(prev) 화살표를 만드는 작업 */
+    content: "\f053";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 25px;
+    color: #fff;
+
+    visibility: visible; /* visible :부모는 안보이지만 자식은 보이게함 */
+    position: absolute;
+    left: 0;top: 0;
+}
+.main .slick-next{
+    right: 0;
+    visibility: hidden;
+}
+.main .slick-next::after{/* 화면상의 오른쪽(next) 화살표를 만드는 작업 */
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 25px;
+    color: #fff;
+
+    visibility: visible;
+    position: absolute;
+    right: 0;top: 0;
+}
+
+
+.main .slick-dots{
+    display: flex; /* 옆으로 정렬 */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+.main .slick-dots li{
+    margin: 0 5px;
+    width: 13px; height: 13px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s; /* 부드럽게 움직여짐 */
+}
+.main .slick-dots li.slick-active{ /* active라는 클래스 명이 붙은 곳은 이렇게 모양이 변하도록 적음 */
+    width: 20px;
+    border-radius: 5px;
+}
+.main .slick-dots li button{
+    font-size: 0;
+    visibility: hidden; /* 존재하는데 눈에 보이지 않게함 */
+}

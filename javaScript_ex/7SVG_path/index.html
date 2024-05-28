@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 사이트 참고: https://www.brandium.nl/ -->
+    <!-- svg path curve(구글 검색) -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths -->
+    <!-- ✨<path d="M 10 10 C 20 20, 40 20, 50 10" stroke="black" fill="transparent"/> 이거 위치값 알기 -->
+    <!-- ✨M 선의 위치값(x,y) C 점의 위치값(x,y) 끝점의 위치값(x,y)-->
+    <div class="svgWrap">
+        <svg width="1200" height="400">
+            <!-- d-속성/ fill-속성값 -->
+            <path d="M 10 200 Q 600 200 1190 200" fill="transparent"
+            stroke-width="2px" stroke="white">
+        </svg>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

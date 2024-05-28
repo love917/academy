@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>잘 안쓰임</h3>
+    <p>뒤에 추가되거나 제거되면 상관이 없는데<br>앞에 추가되거나 제거되면 그 뒤에 따라오는 애들이 앞으로 이동해야하기 때문에.
+        <br>컴퓨터의 메모리가 일을 많이 해야하는 것임</p>
+    <script>
+        //배열(array)--추가, 삭제 ---> unshift, shift
+        let arr=['일동','이동','삼동','사동','오동'];
+
+        //배열의 맨 앞의 요소를 제거하고 싶을 때
+        arr.shift();
+        console.log(arr) //['이동','삼동','사동','오동'];
+
+        //배열의 맨 앞의 요소를 추가하고 싶을 때
+        arr.unshift("클레");
+        console.log(arr) //['클레','이동','삼동','사동','오동'];
+
+        //여러개 추가
+        arr.unshift("푸리나","종려","샬롯");
+        console.log(arr) //['푸리나', '종려', '샬롯', '클레', '이동', '삼동', '사동', '오동']
+    </script>
+</body>
+</html>

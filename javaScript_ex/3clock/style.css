@@ -1,0 +1,22 @@
+@charset "UTF-8";
+*{margin: 0;padding: 0;}
+body{font-family: "Lilita One", sans-serif;}
+span{color: #003C43;}
+
+.clock{
+    width: 300px;
+    text-align: center;
+    position: absolute; left: 30px; top: 100px;
+    padding: 20px 0;
+}
+
+.time_box{}
+.time_box .txt_lg{font-size: 50px;width: 62px; display: inline-block;}
+.time_box .txt_sm{font-size: 36px;width: 60px; display: inline-block;}
+.time_box .txt_mark,
+.time_box .txt_mark02{font-size: 30px;}
+
+.date_box{font-size: 16px;}
+.date_box span{}
+.date_box .day{display: block;}
+.date_box .day .point{}

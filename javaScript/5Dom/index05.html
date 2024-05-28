@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click</button>
+
+    <div id="memberList">
+        <p id="p1">보라돌이</p>
+        <p id="p2">뚜비</p>
+        <p id="p3">나나</p>
+    </div>
+    <script>
+        //📜DOM 삭제
+        //✨부모를 불러서 자식을 지워라고 해야함
+        //[1]첫번째 방법
+        //document.querySelector("#btn").addEventListener('click',function(){
+        //    let memList = document.querySelector("#memberList")
+        //    let p1 = document.querySelector("#p1")
+        //    memList.removeChild(p1)
+        //})
+
+        //[2]두번째 방법
+        document.querySelector("#btn").addEventListener('click',function(){
+            let p1 = document.querySelector("#p1")
+            p1.parentNode.removeChild(p1)
+        })
+    </script>
+</body>
+</html>

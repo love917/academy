@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn1{border: 2px solid #C65BCF; padding: 10px;}
+        #child_btn{border: 2px solid #874CCC; }
+
+    </style>
+</head>
+<body>
+    <div id="btn3">
+        btn3
+        <div id="btn2">
+            btn2
+            <div id="btn1">
+                btn1
+                <div id="child_btn">child_btn</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //버블링, 캡쳐링
+        //childBtn.addEventListener("이벤트",할일,ture)
+        //childBtn.addEventListener(1️⃣,2️⃣,3️⃣)
+        //3️⃣번째 : 매개변수(파라미터)의 값으로  --> 버블링, 캡처링 등의 사용여부를 설정할 수 있다.
+        //--> 아무것도 안적으면 기본은 ture
+        //🍒ture설정시 한 요소에서 window까지 이벤트를 전파(Propagation) = 버블링
+        //--> 자식요소에서 부모 객체로, 즉 상위로 전파됨.
+        //🍒ture 설정시 부모객체에서 자식객체로 전달 = 캡쳐링
+
+        //💛event.stopPropagation --> 다음 캡쳐링이나 버블링을 멈추게 함
+
+        let childBtn = document.querySelector("#child_btn");
+        let btn1 = document.querySelector("#btn1");
+        let btn2 = document.querySelector("#btn2");
+        let btn3 = document.querySelector("#btn3");
+
+        childBtn.addEventListener("click",function(e){
+            
+            console.log("나는 자식입니다")
+        },true)
+        btn1.addEventListener("click",function(){
+            event.stopPropagation();
+            console.log("나는 부모입니다")
+        },true)
+        btn2.addEventListener("click",function(){
+            console.log("나는 할애비입니다")
+        },true)
+        btn3.addEventListener("click",function(){
+            console.log("나는 증조 할아버지입니다")
+        },true)
+        //-------------------------
+        //childBtn.addEventListener("click",function(){
+        //    console.log("나는 자식입니다")
+        //})
+        //btn1.addEventListener("click",function(){
+        //    console.log("나는 부모입니다")
+        //})
+        //childBtn.addEventListener("이벤트",할일,ture)
+        //childBtn.addEventListener("click",function(){
+            
+        //})
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //📜배열 최신 문법
+
+        let 시민들=[
+            {name:'박일동',age:16,gender:"남"},
+            {name:'박이동',age:17,gender:"여"},
+            {name:'박삼동',age:18,gender:"남"},
+            {name:'박사동',age:19,gender:"여"},
+            {name:'박이동',age:20,gender:"남"},
+        ]
+
+        //참고해서 return뒤에는 뭐가 찍혀야하는가 생각해보기
+        //let item = 시민들[0]
+        //console.log(item.name)//박일동
+
+        //◽ name만 배열로 출력하고 싶다면
+        //let namePrint=시민들.map(function(item){
+        //    return item.name
+        //})
+
+        //◽ 화살표함수
+        //let namePrint=시민들.map((item)=>item.name)//매개변수가 하나일때 괄호를 줄일 수 있다.
+        let namePrint=시민들.map(item=>item.name)
+
+        //◽ age만 배열로 출력
+        let agePrint=시민들.map(item=>item.age)
+        
+        console.log(namePrint)//['박일동', '박이동', '박삼동', '박사동', '박이동']
+        console.log(agePrint)//[16, 17, 18, 19, 20]
+
+        
+        //---------------------------------
+        let arrayPrint=시민들.map(item=>item)
+        console.log(arrayPrint)
+
+        if(시민들 === arrayPrint){
+            console.log("같음")
+        }else{
+            console.log("다름")
+        }//다름
+
+        let 아들 = 20;
+        let 딸 = 20;
+
+        if(아들 === 딸){
+            console.log("같음")
+        }else{
+            console.log("다름")
+        }
+        //객체 --> 참조형 객체 안에는 주소(번지)가 다르기 때문에 "다름"이라고 나온다.
+        //변수 --> 기본형
+
+        function 함수(){
+            let green = 3;
+        }
+        함수();
+
+
+        //--------------------------------
+        //시민들에서 박삼동만 빼고 가져오기
+        let result = 시민들.filter(function(item){
+            //react에서 쓰는 경우 : "스웨터만 보고싶다.할 때 필터기능을 많이 씀"
+            //filter - return 과 세트!!
+            return item.name!=="박삼동" // ! ---> 아닌것
+        })
+        console.log(result)
+
+        //--------------------------------
+        //시민들에서 박삼동만 가져오기
+        let result2 = 시민들.filter(function(item){
+            //react에서 쓰는 경우 : "스웨터만 보고싶다.할 때 필터기능을 많이 씀"
+            //filter - return 과 세트!!
+            return item.name=="박삼동"
+        })
+        console.log(result2)
+
+        //--------------------------------
+        //나이가 17세 이상이면서, 박삼동이 아닌것 가져오기
+        let result3 = 시민들.filter(function(item){
+            return item.age >= 17 && item.name!=="박삼동"
+        })
+        console.log(result3)
+    </script>
+</body>
+</html>

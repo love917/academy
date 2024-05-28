@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="page-wrap">
+
+        <div id="canvas"></div>
+        <div class="flex-wrapper multi-textures">
+            <span>Click me !</span>
+            <!-- notice here we are using the data-sampler attribute to name our displacement sampler uniform -->
+            <img src="./images-curtain/displacement/14.jpg" crossorigin="" data-sampler="displacement" />
+            <img src="./images-curtain/3.jpg" />
+            <img src="./images-curtain/4.jpg" />
+            <img src="./images-curtain/5.jpg" />
+            <img src="./images-curtain/6.jpg" />
+        </div>
+    </div>
+    <script type="module" src="./curtain.js"></script>
+</body>
+</html>

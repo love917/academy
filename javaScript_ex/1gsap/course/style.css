@@ -1,0 +1,12 @@
+*{margin: 0;padding: 0;}
+
+.wrap>div{
+    width: 100px;height: 100px;
+    margin: 50px 0;
+    text-align: center;
+    line-height: 100px;
+}
+.하나{background-color: #2C7865;}
+.둘{background-color: #90D26D;}
+.셋{background-color: #FFAF45;}
+.넷{background-color: #77B0AA}

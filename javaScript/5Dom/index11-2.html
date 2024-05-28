@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .memberList{}
+        .memberList li{
+            width: 200px; list-style: none;
+            border: 10px solid transparent;
+        }
+        .memberList li:hover{border: 10px solid #EE4266;}
+        .memberList li img{width: 100%;display: block;}
+    </style>
+</head>
+<body>
+    <h1>동물원 동물 현황 리스트</h1>
+    <ul class="memberList">
+        <li><img id="rabbit" class="aaa" src="https://cdn.travel-life.co.kr/news/photo/202301/2682076_1728_3353.JPG" alt=""></li>
+        <li><img id="rabbit" class="bbb" src="https://flexible.img.hani.co.kr/flexible/normal/970/647/imgdb/resize/2018/0718/00503449_20180718.JPG" alt=""></li>
+        <li><img id="rabbit" class="ccc" src="https://img.freepik.com/premium-photo/view-tiger-cub-wild_658000-295.jpg" alt=""></li>
+    </ul>
+    <script>
+        //https://cdn.jeonguknews.co.kr/news/photo/202311/56234_55617_2939.jpg
+        //💚이벤트 위임과 활용(Event Delegation(업무, 권리를 넘긴다는 뜻))
+        
+        let list = document.querySelector(".memberList")
+        let lists = list.querySelectorAll("li")
+        //console.log(lists)
+
+        ////li 태그 만들기
+        let liNode = document.createElement("li")
+
+        //img 태그 만들기
+        let imgNode = document.createElement("img");
+        imgNode.src =  "https://cdn.jeonguknews.co.kr/news/photo/202311/56234_55617_2939.jpg";
+        imgNode.id = "parrot";
+        imgNode.className = "ddd"
+        console.log(imgNode)
+        list.appendChild(liNode)
+        liNode.appendChild(imgNode)
+
+        //💚이벤트 위임
+        //:이벤트 타겟을 걸었을 때 각각 li한테 일을 시키는 것이 아니라 
+        //(버블링을 이용해서)부모한테 걸어주는 것을 이벤트 위임이라고 한다. 
+        list.addEventListener("click",function(event){
+            console.log(event.target)
+            event.target.parentNode.style.borderColor = "#211C6A"
+        })
+    </script>
+</body>
+</html>

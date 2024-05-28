@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        canvas{background-color: #eee;}
+    </style>
+</head>
+<body><!-- https://www.curtainsjs.com/ -->
+    <canvas class="canvas" width="600" height="400"></canvas>
+
+
+
+
+    <script>
+        let canvas = document.querySelector('.canvas');
+        let context = canvas.getContext('2d'); //<--- 이걸 적는게 필수임
+        
+        context.fillRect(50,50,100,100)
+        context.fillStyle = "red";
+
+        context.fillRect(80,80,100,100)
+        
+    </script>
+</body>
+</html>

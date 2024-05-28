@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.부모 {
+    background-color: crimson;
+    width: 300px;
+    height: 200px;
+    box-sizing: border-box;
+    /* box-sizing : 영역 width, height안에 padding과 border를 포함시킴
+    그게 아니면 padding, borer 두께까지 합쳐서 width는 360px가 되기 때문이다. */
+    padding: 20px;
+    border: 10px solid #FFCAD4;
+}
+
+.부모 div {
+    background-color: burlywood;
+}
+
+.부모 div a {
+    background-color: darkslategrey;
+}
+/* a태그 : inline요소. 즉 width를 줘도 적용x */

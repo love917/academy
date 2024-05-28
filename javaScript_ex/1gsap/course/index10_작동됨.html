@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <style>
+        .main{height: 100vh; position: relative;}
+        .imgs{
+            position: relative;
+            width: 520px; height: 607px; margin: 5vh auto 0;}
+        .imgs>img{position: absolute; left: 0; right: 0; top: 0; bottom: 0;}
+
+        .square{width: 100px; height: 300px; position: absolute; left: 100px; left: 100px; background-color: aqua;}
+    </style>
+</head>
+
+<body>
+    <div class="top" style="height:100vh; background-color: gray;"></div>
+
+    <div class="main">
+        <div class="imgs">
+            <img src="./img/img1.png" alt="왼팔" class="왼팔">
+            <img src="./img/img2.png" alt="오른팔" class="오른팔">
+            <img src="./img/img3.png" alt="오른쪽다리" class="오른쪽다리">
+            <img src="./img/img4.png" alt="왼쪽다리" class="왼쪽다리">
+            <img src="./img/img5.png" alt="머리" class="머리">
+            <img src="./img/img6.png" alt="허리" class="허리">
+            <img src="./img/img7.png" alt="몸통" class="몸통">
+        </div>
+
+        <div class="square">사각형</div>
+    </div>
+
+    <div class="bottom" style="height:100vh; background-color: gray;"></div>
+
+<!-- ---------------------SCRIPT-------------------------------------->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+
+        gsap.registerPlugin(ScrollTrigger);
+        let value = document.querySelector('.square').offsetWidth //영역의 넓이를 확인. 함수 외우기⭐⭐
+        let value2 = document.querySelector('.square').offsetHeight //영역의 높이를 확인. 함수 외우기⭐⭐
+        console.log(value)
+        console.log(value2)
+
+        //+= 의 의미 : 
+        let num=3;
+        num +=4; //num = num + 4
+
+            let tl=gsap.timeline({
+               scrollTrigger:{
+                trigger:".square",//=target
+                start:"top 60%",
+                end:()=>`+=${document.querySelector('.square').offsetHeight}`,
+                end:()=>`+=200%`,
+                //start 지점에서 `square의 높이(300px)`만큼 scroll이 이동되면 애니메이션이 끝난다. 
+                markers:true,
+             
+
+               } 
+            });
+        
+        tl.from('.몸통', {
+            duration: 1,
+            opacity: 0,
+            x: 100,
+            y: -100,
+            ease: "back.out(0.8)",
+        })
+        tl.from('.허리', {
+            duration: 1,
+            opacity: 0,
+            y: 150,
+            ease: "back.out(0.8)",
+        }, "-=0.5") //마지막 값 : delay값(1초보다는 반 늦게 오게함
+        tl.add('test')
+        tl.from('.왼팔', {
+            duration: 1,
+            opacity: 0,
+            x: -150,
+            ease: "back.out(0.8)"
+        })
+        tl.from('.오른팔', {
+            duration: 1,
+            opacity: 0,
+            x: 150,
+            ease: "back.out(0.8)"
+        })
+        tl.from('.왼발', {
+            duration: 1,
+            opacity: 0,
+            y: -150,
+            ease: "back.out(0.8)"
+        })
+        tl.from('.오른발', {
+            duration: 1,
+            opacity: 0,
+            x: -150,
+            ease: "back.out(0.8)"
+        })
+        tl.from('.머리', {
+            duration: 1,
+            opacity: 0,
+            y: -150,
+            ease: "back.out(0.8)"
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .stage{
+            width: 500px;height: 500px;
+            background-color: lightcoral;
+            opacity: 0; visibility: hidden;
+        }
+        .stage .item{
+            width: 80px;height: 90px; 
+            background-size: cover;
+            position: absolute; top: 50%;
+            transform: translate(-100%);
+        }
+
+        .item1{background: url(https://i.namu.wiki/i/qWyoh8nA_DcTuY4gqcmkFC2k5Sbn8D6yVCVRQHMhJD-eRYtugUDNg6jP-v0VqbnFdCjL4jYrepNXw9ey8ouFAA.webp);}/* 유리 */
+        .item2{background: url(https://upload.wikimedia.org/wikipedia/ko/4/4a/%EC%8B%A0%EC%A7%B1%EA%B5%AC.png);}/* 짱구 */
+        .item3{background: url(https://i.namu.wiki/i/5Veq9acZq3uqIUMsQbKyf4wjHiuk500_e7LUTtdWvG_2m7Wax-Anb5bFATOMsQReegqabE05_P6Swl9h9vUl3g.webp);}/* 철수 */
+        .item4{background: url(https://item.kakaocdn.net/do/93f6fdee16edbf3cb096127b68c495bdf604e7b0e6900f9ac53a43965300eb9a);}/* 맹구 */
+        .item5{background: url(https://i.namu.wiki/i/2CxTTURJ74h0iwxTeFMqRegi_ANKsyPFr5sfxq28gKC3ufjsrDpg-OYX-mw3X2jrwYGXAvSC18TW8RpiN9Mc2g.webp);}/* 훈이 */
+        .item6{background: url(https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/cnoC/image/zEhZ2awRcQW18YL-RfpDDNPbcJs.PNG);}/* 흰둥이 */
+    
+    
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+        <div class="item item4"></div>
+        <div class="item item5"></div>
+        <div class="item item6"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        let tl=gsap.timeline();
+        tl
+            .to(".stage",{autoAlpha:1,duration:1.5})
+            .to(".item",{
+                //keyframes:{
+                //    "0%":{x:0,y:0},
+                //    "25%":{x:20,y:0,ease: "sine.out",},
+                //    "50%":{x:250,y:-100,ease: "sine.in",},
+                //    "75%":{x:400,y:0,ease: "sine.out",},
+                //    "100%":{x:500,y:0},
+                keyframes:{//✨단축하게 되면 easing은 각자 줄수 없다.
+                    x:[0,20,250,400,500],
+                    y:[0,0,-100,0,0],
+                    ease: "sine.out"
+                },
+                duration:2,
+                stagger:0.2
+            })
+
+
+        //autoAlpha: opacity, visibility 둘다 컨트롤하는 태그.  
+        
+    </script>
+</body>
+</html>

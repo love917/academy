@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #btn1{border: 2px solid #E72929; padding: 10px;}
+        #btn2{border: 2px solid #C65BCF; padding: 10px;}
+        #child_btn{border: 2px solid #874CCC; }
+
+    </style>
+</head>
+<body>
+    <div id="btn2">
+        btn2
+        <div id="btn1">
+            btn1
+            <div id="child_btn">child_btn</div>
+        </div>
+    </div>
+
+    <script>
+        //🍒event.target --> 이벤트 버블링의 가장 끝단에 위치한 마지막 요소를 반환 
+        //(클릭한것의 가장 하위요소를 말함)
+        //btn2한테는 childBtn이 제일 하위요소이고, btn1한테도 childBtn이 제일 하위요소이다.
+        //콘솔로 보면 클릭한 대상과 똑같은게 찍히지만 버블링이 된게 맞음
+
+        //🍒event.currentTarget --> 이벤트 버블링의 끝단에 위치한 마지막 부모요소를 반환
+        //이걸 이용해서 이벤트를 위임할 수 있다. 
+        //즉, 예를 들면 childBtn 의 이벤트 --> btn2에게 같은 이벤트를 줄 수 있다.
+
+        let childBtn = document.querySelector("#child_btn");
+        let btn1 = document.querySelector("#btn1");
+        let btn2 = document.querySelector("#btn2");
+        
+        childBtn.addEventListener("click",function(ev){
+            //console.log(event.currentTarget.id)
+            console.log(event.target.id)
+        },true)
+        btn1.addEventListener("click",function(event){
+            //console.log(event.currentTarget.id)
+            console.log(event.target.id)
+        },true)
+        btn2.addEventListener("click",function(){
+            //console.log(event.currentTarget.id)
+            console.log(event.target.id)
+        },true)
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let A = "즐거운 하루 되세요"
+        let B = "하루"
+        let C = A.match(B)//배열이 만들어짐
+
+        console.log(C[0])//하루 --> B로 인해서 찾아진 A안에서 '하루'를 찾고 -> C를 통해 도출함
+        console.log(/[하루]/.test(A))//true
+        console.log(/즐거운$/.test(A))//false
+
+    </script>
+</body>
+</html>

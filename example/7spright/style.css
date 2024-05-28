@@ -1,0 +1,59 @@
+*{margin: 0;padding: 0;}
+body{background-color: #222;}
+li{list-style: none;}
+
+.one{height: 200px;}
+.one ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.one ul li{}
+.one ul li a{
+    display: block;
+    width: 60px; height: 60px;
+    background: url(./images/icon.png);
+    background-position: 0 0;
+}
+.one ul li:nth-child(2) a{background-position: 0 -60px;}
+.one ul li:nth-child(3) a{background-position: 0 -120px;}
+.one ul li:nth-child(4) a{background-position: 0 -180px;}
+
+.one ul li:nth-child(1) a:hover{background-position: -60px 0;}
+.one ul li:nth-child(2) a:hover{background-position: -60px -60px;}
+.one ul li:nth-child(3) a:hover{background-position: -60px -120px;}
+.one ul li:nth-child(4) a:hover{background-position: -60px -180px;}
+/* ------------------------------------ */
+
+.two{}
+.two ul{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.two ul li{}
+.two ul li a{
+    display: block;
+    width: 60px; height: 60px;
+    background: url(./images/icon.png);
+    background-position: 0 390px;
+}
+
+.two ul li:nth-child(2) a{background-position: 0 330px;}
+.two ul li:nth-child(3) a{background-position: 0 270px;}
+.two ul li:nth-child(4) a{background-position: 0 210px;}
+.two ul li:nth-child(5) a{background-position: 0 150px;}
+.two ul li:nth-child(6) a{background-position: 0 90px;}
+
+.two ul li:nth-child(1) a:hover{background-position: -60px 390px;}
+.two ul li:nth-child(2) a:hover{background-position: -60px 330px;}
+.two ul li:nth-child(3) a:hover{background-position: -60px 270px;}
+.two ul li:nth-child(4) a:hover{background-position: -60px 210px;}
+.two ul li:nth-child(5) a:hover{background-position: -60px 150px;}
+.two ul li:nth-child(6) a:hover{background-position: -60px 90px;}
+
+/* ------------------------------------ */

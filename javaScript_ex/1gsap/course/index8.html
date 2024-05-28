@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <style>
+        .imgs {
+            width: 520px;
+            height: 607px;
+            position: relative;
+            margin: 5vh auto 0;
+        }
+
+        .imgs>img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .btn_wrap {
+            position: absolute;
+            left: 50%;
+            bottom: 5vh;
+            transform: translate(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn_wrap a {
+            display: block;
+            padding: 5px 10px;
+            background-color: #222;
+            border-radius: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imgs">
+        <img src="./image/body.png" alt="몸통" class="몸통">
+        <img src="./image/stomach.png" alt="허리" class="허리">
+        <img src="./image/leftarm.png" alt="왼팔" class="왼팔">
+        <img src="./image/rightarm.png" alt="오른팔" class="오른팔">
+        <img src="./image/leftleg.png" alt="왼발" class="왼발">
+        <img src="./image/rightleg.png" alt="오른발" class="오른발">
+        <img src="./image/head.png" alt="머리" class="머리">
+    </div>
+    <div class="btn_wrap">
+        <a href="#" class="play">play</a>
+        <a href="#" class="pause">pause</a>
+        <a href="#" class="reverse">reverse</a>
+        <a href="#" class="restart">resart</a>
+        <a href="#" class="test">test</a>
+    </div>
+
+
+
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        let tl = gsap.timeline({paused:true});//애니메이션 멈춤
+        tl.from('.몸통', {
+            duration: 1,
+            opacity: 0,
+            x: 100,
+            y: -100,
+            ease: "back.out(0.8)",
+        })
+        tl.from('.허리', {
+            duration: 1,
+            opacity: 0,
+            y: 150,
+            ease: "back.out(0.8)",
+        }, "-=0.5") //마지막 값 : delay값(1초보다는 반 늦게 오게함
+        tl.add('test')
+        tl.from('.왼팔', {
+            duration: 1,
+            opacity: 0,
+            x: -150,
+            ease: "back.out(0.8)"
+        })
+        tl.from('.오른팔', {
+            duration: 1,
+            opacity: 0,
+            x: 150,
+            ease: "back.out(0.8)"
+        })
+        tl.from('.왼발', {
+            duration: 1,
+            opacity: 0,
+            y: -150,
+            ease: "back.out(0.8)"
+        })
+        tl.from('.오른발', {
+            duration: 1,
+            opacity: 0,
+            x: -150,
+            ease: "back.out(0.8)"
+        })
+        tl.from('.머리', {
+            duration: 1,
+            opacity: 0,
+            y: -150,
+            ease: "back.out(0.8)"
+        })
+
+        document.addEventListener('click',function(e){
+            let check=e.target.classList;//target은 가장 끝에 있는 아이를 집어줌 가장 끝에 있는 노드
+            //console.log(check)
+
+                if(check.contains("play"))//check자리에 target.classList가 와있는 것과 같다.
+                console.log(tl.play())//class에서 play가 포함되있으면 true가 뜸 <-> 포함 안하고 있으면 false
+                if(check.contains("pause")){tl.pause();}
+                if(check.contains("reverse")){tl.reverse();}
+                if(check.contains("restart")){tl.restart();}
+                if(check.contains("test")){tl.test();}//tl.add('test')이후부터 실행
+            })
+            </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</body>
+
+</html>

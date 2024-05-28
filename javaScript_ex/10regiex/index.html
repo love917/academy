@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규식</title>
+</head>
+<body>
+    <a href="https://regexr.com/5mhou" target="_blank">정규식 연습사이트</a><br>
+
+    <h1>정규표현식</h1>
+    <h2>(Regular expression의 약자 regiex(레직스))</h2>
+    <h3>정규식</h3>
+    : 텍스트에서 우리가 원하는 ⭐특정한 패턴⭐을 찾을 때 사용<br>
+    (전화번호형태의 패턴을 찾거나 웹사이트 주소형태의 패턴, 이메일형태의 패턴을 찾을 때 .. 등등에 사용됨)<br>
+
+    : 정규식은 문자를 검사하고 싶을 때 사용된다.<br><br>
+
+    <h3>🧡사용방법</h3>
+    : 정규식은 /로 시작하여 "나는 정규표현식"임을 나타낸다.<br>
+    : /우리가 찾고자하는 패턴/  ==> 슬래시(/)안에 우리가 찾고자하는 패턴을 넣어주면 된다.<br>
+    : /regiex/i  ==> i는 어떤 옵션에 따라 검색할건지 플래그를 활용함<br><br>
+
+    <h3>🧡문법</h3>
+    ◽ (bar) |  ==> 또는(or연산자)<br>
+    /color | you/<br><br>
+
+    ◽ () ==> 그룹<br>
+    ◽ (?:) ==> 찾지만 기억하지는 않음(그룹에 대한 기억은 하고있지 않음)<br>
+    ◽ [] ==> 함축적으로 나타낼수 있다.<br>
+    ◽ ? ==> 없거나 있거나(zero or one)<br>
+    ◽ * ==> 없거나 있거나 많거나(zero or more)<br>
+    ◽ + ==> 하나 또는 많이 - 없는거 안 찾음<br>
+    ◽ {n} ==> n번 반복<br>
+    ◽ {min,} ==> 최소<br>
+    ◽ {min,max} ==> 최소,최대<br>
+
+
+    gr(a|e|d)y = gr[aed]y <br>
+    gr<strong>(a|e|d)</strong>y = gr<strong>[aed]</strong>y <br><br><!-- 화면에서 보기 -->
+    좀더 함축적으로 나타낼 수 있다.그 안에 해당하는 것이 있으면 선택이 됨
+
+    
+</body>
+</html>

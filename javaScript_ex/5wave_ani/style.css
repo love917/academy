@@ -1,0 +1,94 @@
+*{margin: 0;padding: 0;}
+
+:root{
+    --index:calc(1vw + 1vh);
+    --transition:cubic-bezier(0.07, 0.86, 0.19, 1.01);
+}
+body{
+    background-color: #141414;
+}
+.wrap{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.items{
+    display: flex; gap: 0.4rem; /* 0.4rem : 16px의 40% */
+    perspective: calc(var(--index) * 35); /* 카메라 */
+}
+.item{
+    width: calc(var(--index)*3);
+    height: calc(var(--index)*12);
+    background-size: cover;
+    transform-style: preserve-3d;
+    background-color: #222;
+    background-position: center;
+    cursor: pointer;
+    filter: grayscale(1) brightness(0.5);
+    transition: transform 1.25s var(--transition), filter 3s var(--transition),
+    width 1.25s var(--transition); 
+}
+.item::before,
+.item::after{
+    content: "";
+    position: absolute;
+    right: calc(var(--index) * -1);
+    width: 20px;height: 100%;
+     
+}
+.item::after{
+    left: calc(var(--index) * -1);}
+.item:hover{
+   transform: translateZ(calc(var(--index) * 10));
+   filter: grayscale(0) brightness(1);
+}
+
+/* hover의 오른쪽 */
+.item:hover + *{/* 각자의 바로 밑 동생 */
+    transform: translateZ(calc(var(--index) * 8.5)) rotateY(35deg);
+    filter: grayscale(0) brightness(1);
+    z-index: -1;
+}
+.item:hover + * + *{/* '각자의 바로 밑 동생' 의 동생 */
+    transform: translateZ(calc(var(--index) * 5.6)) rotateY(40deg);
+    filter: grayscale(0) brightness(1);
+    z-index: -2;
+}
+.item:hover + * + * + *{
+    transform: translateZ(calc(var(--index) * 2.5)) rotateY(30deg);
+    filter: grayscale(0) brightness(1);
+    z-index: -3;
+}
+.item:hover + * + * + * + *{
+    transform: translateZ(calc(var(--index) * 0.6)) rotateY(15deg);
+    filter: grayscale(0) brightness(1);
+    z-index: -4;
+}
+
+/* hover의 왼쪽 */
+.item:has(+ :hover){/* 아이템중에 바로 밑에 동생이 hover를 가지고 있는 것을 부름->형을 찾음 */
+    transform: translateZ(calc(var(--index) * 8.5)) rotateY(-35deg);
+    filter: grayscale(0) brightness(1);
+}
+.item:has(+ * + :hover){
+    transform: translateZ(calc(var(--index) * 5.6)) rotateY(-40deg);
+    filter: grayscale(0) brightness(1);
+}
+.item:has(+ * + * + :hover){
+    transform: translateZ(calc(var(--index) * 2.5)) rotateY(-30deg);
+    filter: grayscale(0) brightness(1);
+}
+.item:has(+ * + * + * + :hover){
+    transform: translateZ(calc(var(--index) * 0.6)) rotateY(-15deg);
+    filter: grayscale(0) brightness(1);
+}
+
+/* :active ==> 활성상태인 요소 마우스를 올리고 있는 동안을 의미함(tab키) */
+.item:active, .item:focus{
+    transform: translateZ(calc(var(--index) * 10));
+    width: 28vw; 
+    z-index: 100;
+    filter: grayscale(0) brightness(1);
+    margin: 0 0.45vw;
+}

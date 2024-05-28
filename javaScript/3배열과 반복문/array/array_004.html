@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>forEach문은 많이 쓰임</h2>
+    <script>
+        //배열 -- 반복문을 사용한 출력
+        let fruits=['🍇','🍉','🍊','🍋','🍌','🍍','🍓','🍏','🍑','🍒','🍈','🥝']
+
+        for(let i=0;i<fruits.length;i++){
+            //총 길이(12개)의 하나 작은 수가 index 번호가 되는것. index : i라는 변수가 0번부터 12번까지 표시된다는 뜻 
+            document.write(fruits[i] + '<br>')
+        }
+
+        //fruits.forEach(함수) --> fruits 배열의 요소의 각각의 할일을 함수에다가 적음
+        //fruits.forEach(function(매개변수가 들어올 수 있다.){})
+        //fruits.forEach(function(item요소 하나하나, index번호, fruits배열자체){})
+
+        fruits.forEach(function(item,index){
+            console.log(index)
+        })
+
+        fruits.forEach(function(cat,dog){//cat자리에는 item이 들어오고, dog자리에는 index번호가 들어온다.
+            console.log(cat)
+        })
+
+        //--------------------------
+        //for..in, for..of
+        for(let i of fruits){//item 자체가 추출됨
+            console.log(i)
+        }
+        for(let i in fruits){//index번호가 추출됨
+            console.log(i)
+        }
+    </script>
+</body>
+</html>

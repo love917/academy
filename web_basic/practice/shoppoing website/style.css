@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+html, body{
+    font-size: 14px; /* 폰트 크기를 안맞추면 기본적으로 14px */
+    color: #333;
+}
+
+img{width: 100%;}
+/* 🔍(%)percentage를 주면 h1태그의 크기를 따라감
+왜냐하면 a태그가 (공간인식이 없는)inline요소이기 때문에 말이 통하는 h1의 공간을 따라감 */
+
+a{color: #333; text-decoration: none;} /* a태그가 파란색으로 바뀌어서 그걸 없애주는 명령어를 썼다. */
+
+/* --------------★header★-------------- */
+.header{
+    height: 100px;
+    border-top: 5px solid#333;
+    border-bottom: 1px solid#333;
+    box-sizing: border-box;
+}
+
+.header h1{
+    float: left;
+    width: 400px; height: 100%; /* 위에 있는 a태그가 지금 h1의 공간을 설정하여 따르도록 되어짐 */
+    padding-top: 27px;
+    box-sizing: border-box;
+}
+
+.header .gnb{
+    float: right;
+    width: 600px; height: 100%;    
+}
+
+.header .gnb > ul >li{
+    float: left;
+    width: 150px; height: 94px;
+    line-height: 94px;
+    text-align: center;
+}
+
+.header .gnb .miannav{
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+}
+
+.header .gnb li:hover .miannav{color: #333;}
+.header .gnb .miannav .subnav{
+    width: 150px; 
+    line-height: 40px;
+    border: 1px solid #666;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+/* --------------★end header★-------------- */

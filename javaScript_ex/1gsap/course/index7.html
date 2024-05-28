@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .wrap>div{height: 100vh;}
+        .div1{background-color: #4793AF;}
+        .div2{background-color: #FFC470;padding-top: 50px;}
+        .div2>div{width: 150px;height: 150px;margin-bottom: 150px;}
+        .square1{background-color: #DD5746;}
+        .square2{background-color: #8B322C;transition: 0.3s;}
+        .square2.active{background-color: #0C0C0C;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="div1"></div>
+        <div class="div2">
+            <div class="square1"></div>
+            <div class="square2"></div>
+        </div>
+        <div></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+ 
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".square1",{
+            x:700,
+            duration:3,
+            scrollTrigger:{
+                trigger:".div2",
+                start:"top 30%" ,
+                end:"center 10%" ,
+                scrub:true,           
+                markers:true, 
+                pin:".div2",
+                toggleClass:{"targets":[".square1",".square2"], className:"active"}
+
+            }
+        })//스크롤을 내려야 애니메이션이 실행되도록 하는 것 : scroll trigger(Gsap)
+
+
+        //gsap.to(".square1",{
+        //    x:700,
+        //    duration:3,
+        //    scrollTrigger:{
+        //        trigger:".div2",//🚗
+        //        start:"top 30%" ,//trigger의 시작점
+        //                          start:.🍏div2의포지션 🍏화면의포지션,//trigger의 시작점
+        //        end:"center 10%" ,//trigger의 종료점 -- 화면의 10%를 말하는 것임
+        //                          end: 🍏div2의포지션 🍏화면의포지션,//trigger의 종료점
+ 
+        //        scrub:true, //기본값:1=true(숫자를 입력할 수 있다.)
+        //                    //start에서 end까지 애니메이션이 scroll에 반응하여 실행됨
+        //        markers:true, // start와 end등 애니메이션의 위치를 화면에 표시 
+        //        pin:".div2", //🚗 애니메이션이 끝날 때까지 start지점에서 멈충. 핀을 꽂은 것처럼 가만히 있어라
+        //        toggleClass:{"targets":".square2", className:"active"} --> start에서 end사이일때는 square2에 클래스 active가 추가되고 그 외의 영역에서는 클래스 active가 삭제
+        //        toggleClass:{"targets":[".square1",".square2"], className:"active"} -->//target이 2개 이상을 만들때, []로 묶어주면된다. 
+        //    }
+        //})     
+
+    </script>
+</body>
+</html>

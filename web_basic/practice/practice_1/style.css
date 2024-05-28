@@ -1,0 +1,33 @@
+*{margin: 0;padding: 0;}
+
+.clearfix::after{content: ""; clear: both; display: block;}
+
+.container{width: 1200px; margin: 0 auto;}
+
+html,body{font-size: 14px; color: #333;}
+
+img{width: 100%;} 
+/* ✨percentage를 주면 h1을 따라감. 왜냐하면 a태그가 (공간인식이 없는)인라인 요소이기 때문에 말이 통하는 할아버지인 h1태그의 공간을 따라감. */
+
+/* footer */
+.footer{background-color: black; color: #fff;}
+
+.footer h2{
+    float: left;
+    width: 400px; height: 100px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+.footer p{
+    float: left;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+.footer .sns{float: right;}
+.footer .sns ul{margin: 0 10px;}
+.footer .sns li{
+    float: left;
+    height: 100px;
+}
+.footer .sns li a{line-height: 100px;}

@@ -1,0 +1,83 @@
+*{margin: 0;padding: 0;}
+body{background-color: #ddd;}
+.main{height: 100vh; position: relative;}
+.cube{
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1500px;
+    /* perspective 속성은 3D 변환 요소에 원근 효과를 적용하는 데 사용됩니다. 이 속성은 원근 효과를 부드럽게 만들어주는데 도움을 줍니다. */
+}
+.box-area{/* 카메라-회전하는 주체 */
+    position: relative;
+    transform-style: preserve-3d;
+    width: 400px;height: 400px;
+    transition: 0.5s; 
+    transform: rotateX(0deg) rotateY(0deg) translateZ(-200px);/* translateZ를 이용해서 cube를 좀 더 멀리서 볼 수 있다. */
+}
+.box-area .box{
+    position: absolute;
+    width: 400px;height: 400px; 
+    transform-style: preserve-3d;
+    border: 2px solid #262626;
+
+    /* 텍스트 중간 정렬하게 함 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box-area .box h2{font-size: 25px;color: #fff;}
+
+.box-area .box-front{
+    background-color: rgba(51, 58, 115,0.5);
+    transform: translateZ(200px);
+}
+
+.box-area .box-right{
+    background-color: rgba(56, 122, 223,0.5);
+    transform: rotateY(90deg) translateZ(200px); /* 축을 먼저 잡아준다. */ 
+}
+
+.box-area .box-back{
+    background-color: rgba(80, 196, 237,0.5);
+    /* 3이 뒤로 보고있어야 하므로 Y축을 먼저 잡고 180도 돌려준다. */
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+.box-area .box-left{
+    background-color: rgba(255, 64, 125,0.5);
+    /* Y축을 잡고 -90도로 돌려주었기 때문에, left개체 입장에서는 Z축으로서 앞뒤로 움직이는것임  */
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+.box-area .box-top{
+    background-color: rgba(251, 168, 52,0.5);
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.box-area .box-bottom{
+    background-color: rgba(251, 168, 52,0.5);
+    transform: rotateX(-90deg) translateZ(200px);
+}
+
+/* button */
+.button{
+    width: 1px;height: 1px;
+    position: absolute;top: 50%;left: 50%;
+    transform: translate(-50%, -50%); 
+    /* ⭐화면의 정 중앙에서 기준을 잡고나서, 버튼을(물체를)움직여야 
+    화면을 줄이든 늘이든 원하는 위치에 고정되어 나타난다.⭐ */
+}
+.button>div{position: absolute;}
+.rotate-x-button{left: -300px;}
+.rotate-x-button .rotate-x-top{}
+.rotate-x-button .rotate-x-bottom{}
+
+.rotate-y-button{
+    bottom: -300px;left: 50%;
+     display: flex;gap: 100px;
+    transform: translateX(-50%);
+}
+.rotate-y-button .rotate-y-left{}
+.rotate-y-button .rotate-y-right{}
+
+.front{bottom: -325px; cursor: pointer;transform: translate(-50%, -50%);}

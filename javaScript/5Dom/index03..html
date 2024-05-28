@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        let strHtml = "";
+        //strHtml += "<h1>제목 : 제목글입니다</h1>"
+        //strHtml += '<img src="https://m.prugna.co.kr/web/product/big/202211/9d7750409c1193bb10a15dcba01f3d6a.jpg" alt="이미지설명" width="400" height="300">'
+        //내용안에 큰따옴표가 있으면, 내용을 싸고 있는걸 작은따옴표로 해준다.('')
+
+        //✨백틱사용
+        //strHtml += 
+        //`"<h1>제목 : 제목글입니다</h1>"
+        //'<img src="https://m.prugna.co.kr/web/product/big/202211/9d7750409c1193bb10a15dcba01f3d6a.jpg" alt="이미지설명" width="400" height="300">`
+
+        //✨잘라서 쓰기
+        strHtml += "<h1>제목 : 제목글입니다</h1>"
+        strHtml +='<img src="https://m.prugna.co.kr/web/product/big/202211';
+        strHtml +='/9d7750409c1193bb10a15dcba01f3d6a.jpg"';
+        strHtml +='alt="이미지설명" width="400" height="300">';
+
+
+        //innerHTML : 텍스트, 태그포함
+        //innerText, textContent : 텍스트만 넣음 
+        document.body.innerHTML = strHtml;
+    </script>
+</body>
+</html>

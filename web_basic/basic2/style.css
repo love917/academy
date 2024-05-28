@@ -1,0 +1,23 @@
+*{margin: 0; padding: 0;}
+.position{
+    margin-right: 10%;
+    margin-top: 10%;
+    margin-bottom: 2000px;
+    position: relative;
+    background-image: url(https://manual.notch.one/0.9.23/en/docs/nodes/generators/grid/img/node-generators-grid-img.jpg);
+}
+
+.position .red{width: 100px;height: 100px;
+    background-color: crimson;
+    position: relative;
+    left: 200px;
+    top: 100px;   /* top은 내 위쪽에 100px만큼 공간이 생긴다 */
+    /* 부모 안에서, red의 왼쪽의 공간이 200px이기 때문에 오른쪽으로 이동함 */
+    /* position: static; --> 움직임이 없는 상태. 기본값 */
+}
+.position .blue{width: 100px;height: 100px;background-color: blue;
+    position: absolute;
+    left: 50px; top: 0;}
+.position .green{width: 100px;height: 100px;background-color: darkgreen;
+    position: fixed; /* 스크롤을 내려도 무조건 화면에 고정 */
+    right: 0; top: 100px;}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <button class="btn">click</button>
+    <script>
+        //🔍함수
+        //함수는 특정한 동작이나 처리를 하도록 만들어진 코드 단위이다.
+        //반복적인 작업을 처리해야 하는 경우 --> 함수로 만들어 놓으면 이후 필요할 때 재사용할 수 있어서 매우 편리함
+        //함수는 호출(함수를 실행했다는 의미)의 결과를 반환(return)하기도 하지만, 결과를 반환하지 않는 함수도 있다.
+
+        //함수는 호출 시 어떤 매개변수(인자)값들을 넘겨서 호출하는 경우도 있지만,
+        //매개변수(인자)값 없이 호출하는 경우도 있다.
+        //함수는 만들어놓고 호출해서 사용하지 않으면 아무런 동작을 하지 않는다.
+
+        //함수 만들기, 호출
+        //function 함수이름(){}
+        function 함수(){
+            console.log("반갑습니다. 함수입니다.")
+        }
+        함수(); //함수를 실행(호출함)
+
+        function cc(){
+            console.log('color is changed')
+        }
+
+        //선택자.addEventListener('click',function(){
+            //클릭했을때의 실행문
+        //})
+
+        //클래스명 btn을 변수에 대입하기
+        let button=document.getElementsByClassName('btn')
+        //console.log(button)
+
+        function cc(){
+            console.log('color is changed')
+        }
+
+        button[0].addEventListener('click',function(){
+            cc();
+        })
+
+        //반환값은 없지만, 매개변수(인수,parameter) --> o
+        function 더하기(a,b){
+            console.log(`내가 받은 값은 ${a}입니다.`)
+            console.log(`내가 받은 값은 ${a+b}입니다.`)
+            console.log(typeof a)
+        }
+        //더하기(22)//인자(argument)
+        더하기("22", "33")
+
+
+        function myFun(a,b,c){
+        console.log(`매개변수의 합은 ${a+b+c}입니다.`)
+        }
+        myFun(10,20,30)
+
+        //반환값이 있는 것
+        //return : 결과값은 반환하고, 그 자리에서 함수를 종료한다.
+        function myFun2(a,b){
+            console.log(`매개변수의 합은 ${a+b}입니다`)
+            return a+b;
+            console.log(`실행되는지 확인`)
+        }
+        let result = myFun2(10,20)
+        console.log(result)//30
+        console.log(myFun2(10,20))//30
+        //결과를 똑같이 나옴
+
+        function myFun3(a){
+            let result = a*2; //result가 중복되는 이름이어도 중괄호 안에서는 살 수 있다.
+            return result;
+        }
+        let result2 = myFun3(3)
+        console.log(result2)//6
+        console.log(myFun3(3))//6
+
+        function showMessage(name){
+            console.log(`${name} 회원님 반갑습니다.`)
+        }
+        showMessage("홍길동")
+        showMessage()//undefined(false)
+
+        function showMessage2(name){
+        let msg=`${name}회원님 반갑습니다.`
+
+        if (name) {
+            consol.log(`${name} 회원님 반갑습니다.`)
+            }else{
+            consol.log(`이름 정보가 없는 회원입니다.`)
+            } 
+        }
+        showMessage()//이름정보가 없는 회원입니다.
+        showMessage("세종대왕")//이름정보가 없는 회원입니다.
+
+
+        function showMessage3(name){
+            let msg =  `회원님 집에 가주세요`;
+
+            if(name){
+                msg = `${name} ${msg}`
+            }
+            console.log(msg)
+        }
+        showMessage3();
+        showMessage3("강감찬");//강감찬 회원님 집에 가주세요
+        
+    </script>
+</body>
+</html>

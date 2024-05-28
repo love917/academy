@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="main">
+        <div class="cube">
+            <div class="box-area">
+                <div class="box box-front"><h2>1front</h2></div>
+                <div class="box box-right"><h2>2right</h2></div>
+                <div class="box box-back"><h2>3back</h2></div>
+                <div class="box box-left"><h2>4left</h2></div>
+                <div class="box box-top"><h2>5top</h2></div>
+                <div class="box box-bottom"><h2>6bottom</h2></div>
+            </div>
+        </div><!-- end cube -->
+
+        <div class="button">
+            <div class="rotate-x-button"><!-- x축을 잡고 위아래로 움직이는 버튼 -->
+                <button class="rotate-x-top" onclick="rotateXAxis(-1)">위</button>
+                <button class="rotate-x-bottom" onclick="rotateXAxis(1)">아래</button>
+            </div>
+            <div class="rotate-y-button"><!-- y축을 잡고 좌우로 움직이는 버튼 -->
+                <button class="rotate-y-left"  onclick="rotateYAxis(1)">좌</button>
+                <button class="rotate-y-right" onclick="rotateYAxis(-1)">우</button>
+            </div>
+            <!-- rotateYAxis(1) 함수 이름을 정하고 매개변수는 1로함 -->
+            <div class="front" onclick="front()">정면</div>
+    </section>
+    <script src="./main.js"></script>
+</body>
+</html>

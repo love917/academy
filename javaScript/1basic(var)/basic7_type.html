@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //* 기본형 타입
+        //숫자형    -->Number
+        //문자(열)형-->String
+        //불리언    -->Boolean
+        //널        -->null
+        //언디파인드 -->undefined
+
+        let name="홍길동"
+        console.log(typeof name) //string 문자
+        console.log(typeof(name)) //string 문자
+
+        let age=20;
+        console.log(typeof age) //number
+
+        let isThisReal=false; //boolean 값 : 참 아니면 거짓(true/false)만 구별함
+        console.log(typeof isThisReal) //boolean
+
+        let isNullCheck=null; //의도적으로 값이 비어있음을 명시한다.
+        console.log(typeof isNullCheck) //null --> object(객체)
+
+        let a; //undefined 값 : 선언만 하고 값을 할당하지 않았을 때 자동으로 undefind가 할당
+        console.log(typeof a) //undefined
+
+
+        //기억하기
+        let eng_score =70;
+        //나의 성적은 70점이고 70은 타입이 number이다.
+        console.log("나의 성적은 "+ eng_score + "점이고 70은 타입이 " + typeof(eng_score) + "이다")
+        console.log(`나의 성적은 ${eng_score}점이고 70은 타입이 ${typeof(eng_score)}이다`)
+        //🍉작은 따옴표가 아님.(tap키 바로 위에 있는 삣침같은 얘임 `)
+
+
+        let myName="이순신";
+        //나의 이름은 이순신이다.
+        console.log("나의 이름은 " + myName + "이다")
+        console.log(`나의 이름은 ${myName}이다`)
+
+        let height=165
+        //나의 이름은 이순신이고 키는 165이다.
+        console.log("나의 이름은 "+ myName + "이고 키는 " + height + "이다")
+        console.log(`나의 이름은 ${myName}이고 키는 ${height}이다`)
+
+        let eng = 90;
+        let nextEng = 100;
+        //당신의 영어 점수는 = 90점입니다. 그리고 90의 타입은 number입니다. 다음에 100점을 받을께요.
+        console.log("당신의 영어 점수는 = "+ eng + "점 입니다. 그리고 90의 타입은 " +typeof(eng) + "입니다. 다음에 " + nextEng +"점을 받을께요.")
+        console.log(`당신의 영어 점수는 = ${eng}점 입니다. 그리고 ${eng}의 타입은 ${typeof(eng)}입니다. 다음에 ${nextEng}점을 받을께요.`)
+
+    </script>
+</body>
+</html>

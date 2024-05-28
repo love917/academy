@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- "/"는 너의 자식 중에서 style.css를 불러라, 는 뜻 -->
+</head>
+<body>
+    <!-- 여기서 id와 class의 이름은 같아도 상관없음.
+    .은 클래스를, #은 아이디를 불러옴 -->
+    <div id="조상" class="조상 남자">
+        <div class="aa 첫째 남자">block요소</div>
+        <div class="bb 둘째 남자">block요소안에 <em>inline요소</em></div>
+        <div class="cc 셋째 약">
+            <div class="child 워니">child1</div>
+            <div class="child 둘이">child2</div>
+            <div class="child 삼이">child3</div>
+        </div>
+
+        <!-- 웹사이트의 개발자 모드에서 넷째를 클릭하면 높이가 0이 나옴 ->자식을 못알아봄
+        그래서 css에서 명령어를 만들어 놓은 "약"이라는 단어만 넣으면 그 명령이 적용이 됨 -->
+        <div class="dd 넷째 약">
+            <div class="child 네일">cosmetic1</div>
+            <div class="child 네이">cosmetic2</div>
+            <div class="child 네삼">cosmetic3</div>
+            <div class="child 네사">cosmetic4</div>
+        </div>
+    </div>
+</body>
+</html>

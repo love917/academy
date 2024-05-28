@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="num">연령대를 입력해 주세요. 10, 20, 30..</label>
+    <input type="number" id="num" onchange="ageCondition();"> <!-- 이름 있는 함수여야만이 호이스팅이 된다. -->
+    <div id="result"><!-- 🍏 --></div>
+    <script>
+        //SWITCH 조건문
+        //여러가지 평가에 따른 분기처리
+        //switch와 break는 1set!
+
+        let text = document.getElementById("result")/* 함수바깥 */
+        
+        function ageCondition(){
+        //let age = 30;
+
+        let value = document.getElementById("num").value;
+        let age = Number(value)
+        let result = "";
+
+        if (!age) {
+            /* 값이 없다면 true(!-반대라는 의미) */
+            return "정확한 연령대를 숫자로 입력해 주세요"
+        } else {
+            switch (age) {
+                case 10:
+                    result = "10대를 위한 미팅은 A코스입니다.";
+                    break;
+                case 20:
+                    result = "20대를 위한 미팅은 B코스입니다.";
+                    break;
+                case 30:
+                    result = "30대를 위한 미팅은 C코스입니다.";
+                    break;
+                default:
+                    result = "기타 연령대를 위한 미팅은 D코스입니다.";
+                    break;
+                }
+                console.log(text)
+                text.innerHTML=result;
+                /* 맨 위에 있는 🍏<div id="result"> </div>🍏 여기 사이에 넣을 값을 ageCondition이라는 함수의 결과값을 넣어라는 의미. */
+            }
+            
+        }
+
+
+    </script>
+</body>
+
+</html>

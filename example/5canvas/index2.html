@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{background-color: #eee;}
+    </style>
+</head>
+<body>
+    <canvas class="canvas" width="600" height="400"></canvas>
+    <div class="imgWrap"></div>
+    
+
+    <script>
+        let canvas = document.querySelector(".canvas");
+        let context = canvas.getContext('2d');
+        
+        let imgWrap = document.querySelector(".imgWrap");
+        //📌태그 만들기
+        //p태그 만들기
+        //[1] let pEle = document.createElement("p")
+
+        //img태그 만들기
+        //[1] let imgEle = document.createElement("img")
+        
+        let imgEle = new Image();
+        imgEle.src="https://img.freepik.com/premium-photo/beautiful-sky-clouds-nature-background_43379-1551.jpg";
+        imgEle.alt="배경";
+
+        //context.drawImage(imgEle, 50, 50)
+        //context.drawImage(imgEle, 50, 50, 70, 120)
+        context.drawImage(imgEle, 0,0,200,200,0,0,100,100)
+        //이미지 내의 (0,0)지점부터 공간 200,200까지가
+        //canvas dml dnlcl 100,100 위치까지의 공간사이에 그려진다.
+        
+        //뒤에 4개의 값은 canvas(캔버스 공간에 대한 정보)
+        //앞에 4개의 값은 이미지이다.(이미지 공간에 대한 정보)
+        //context.drawImage(imgEle, 
+        //이미지 내에서의 x위치,
+        //이미지 내에서의 y위치,
+        //이미지 내에서의 x위치로 x부터 너비값,
+        //이미지 내에서의 x위치로 y부터 높이값,
+        //캔버스)
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //console.log(imgEle)
+//
+        //imgWrap.appendChild(imgEle)
+        //document.body .imgWrap.appendChild(imgEle)//이미지를 자식으로 넣었다는 것을 의미함
+
+        //*객체를 만들 때 new를 쓴다. 저장 장소가 만들어진다고 생각하면 됨
+        //*<img src="이미지 주소" alt="설명글">
+
+
+
+    </script>
+</body>
+</html>

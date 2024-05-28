@@ -1,0 +1,101 @@
+*{margin: 0;padding: 0;}
+@font-face {
+    font-family: 'Freesentation-9Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.wrap{width: 900px; margin: 0 auto; padding: 10% 0;}
+.wrap>div{
+    margin-top: 50px;
+    border-top: 3px dashed lightskyblue;
+}
+h1{text-align: center;margin-bottom: 40px;}
+.wrap>div h2{text-align: center;margin: 10px 0;}
+h1,h2{font-family: 'Freesentation-9Black';}
+
+table{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse; 
+}
+
+table tr{}
+table tr th{border: 1px solid #ccc;}
+table tr td{border: 1px solid #ccc;}
+
+/* table3 */
+.table3{}
+.table3 table{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.table3 table tr:nth-child(1){border-bottom:4px double #0E46A3;}
+.table3 table tr th{border:1px solid #ccc;}
+.table3 table tr th:nth-child(1){border-left:none;}
+.table3 table tr th:nth-child(3){border-right:none;}
+.table3 table tr td{border:1px solid #0E46A3;}
+.table3 table td:nth-child(1){border-left:none;}
+.table3 table td:nth-child(3){border-right:none;}
+
+.table3 table tr th:nth-child(1){width: 30%;}
+.table3 table tr th:nth-child(2){width: 50%;}
+.table3 table tr th:nth-child(3){width: 20%;}
+
+.table3 table tr:nth-child(2){height: 100px;}
+
+/* table5,6 */
+.table5 th, .table6 th{color: #0E46A3;}
+
+/* table7 */
+.table7{}
+.table7 table{}
+.table7 table tr:nth-child(2n){
+    background-color:lightblue;
+}
+.table7 table tr:nth-child(2n + 1){
+    background-color:lightgoldenrodyellow;
+}
+.table7 table tr th:nth-child(even),
+.table7 table tr td:nth-child(even){
+    background-color: lightgreen;
+}
+.table7 table tr td{}
+
+/* 
+✨짝수를 호출하는 방법
+.table7 table tr:nth-child(2n){}
+.table7 table tr:nth-child(even){}
+
+✨홀수를 호출하는 방법
+.table7 table tr:nth-child(2n + 1){}
+.table7 table tr:nth-child(odd){} 
+*/
+
+/* table8 */
+.table8{}
+.table8 table{}
+.table8 table tr{border-bottom: 1px solid #ccc;}
+.table8 table tr:hover{
+    background-color: rgba(100, 13, 107, 0.5)
+}
+.table8 table tr th{border: none;}
+.table8 table tr td{border: none;}
+
+.table8 table tr th,
+.table8 table tr td{padding: 15px;}
+
+/* table9 */
+.table9{}
+.table9 table{}
+.table9 colgroup{}
+.table9 colgroup col:nth-child(1){
+    background-color: rgba(10, 104, 71, 0.8);
+}
+.table9 colgroup col:nth-child(2){
+    background-color: rgb(243, 202, 82);
+}
+.table9 colgroup col:nth-child(3){
+    background-color: rgb(122, 186, 120);
+}

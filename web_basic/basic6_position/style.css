@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.sp1 {
+    /* position: static; : 기본값. 이 명령이 없어도 똑같다는 뜻 */
+    position: relative;
+    top: 10px;
+    z-index: 10;
+    /* z-index: position값이 없으면 적용이 안됨.
+    z값은 3D차원에서의 높이를 말하는 것. */
+    width: 400px;
+    height: 50px;
+    background-color: #999eb2;
+}
+
+.sp2 {
+    position: relative;
+    /* 원래 내가 있던 위치를 기억하여 그 기준으로 움직임(상대적임) */
+    left: 30px;
+    top: -10px;
+    width: 400px;
+    height: 50px;
+    background-color: #8c8fb2;
+}
+
+.absolute {} 
+/* 할아버지 입장인 absolute한테 relative를 붙여줘도 아무 반응이 없음
+왜냐하면 그의 아들인 owner는 자식인데, 부모는 자식의 높이를 따르기 때문에 다르지 않다. */
+
+.absolute .owner{
+    background-color: #4e3346;
+    position: relative;
+}
+
+.absolute .owner .pet {
+    width: 400px;
+    height: 50px;
+}
+
+.absolute .owner .ap1 {
+    background-color: #9681EB;
+    position: absolute;
+    left: 20px; top: 50px;
+    z-index: 30;
+}
+
+.absolute .owner .ap2 {
+    background-color: #45CFDD;
+}
+
+.absolute .owner2 {
+    background-color: indigo;
+}

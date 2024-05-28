@@ -1,0 +1,20 @@
+*{margin: 0; padding: 0;}
+
+.효자::after{content: ""; clear: both; display: block;}
+
+.전체영역{
+    width: 1000px;
+    background-color: rgb(252, 255, 74);
+    padding: 20px;
+    margin: 0 auto 0;
+    box-sizing: border-box;
+}
+.전체영역 .일동자식{
+    width: 30%; height: 200px;
+    float: left;
+    background-color: rgb(64, 187, 64);
+    margin-right: 5%;
+}
+.전체영역 .일일{}
+.전체영역 .일이{}
+.전체영역 .일삼{margin-right: 0%;}

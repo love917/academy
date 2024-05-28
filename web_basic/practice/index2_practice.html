@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .부모 {
+            background-color: #9195F6;
+            border: 5px solid #B7C9F2;
+            width: 1000px;
+            margin: auto;
+        }
+
+        .일동 {
+            background-color: #F9F07A;
+            width: 300px;
+            float: right;
+        }
+
+        .이동 {
+            background-color: #FB88B4;
+            width: 300px;
+            float: right;
+        }
+
+        .삼동 {
+            background-color: #F9F07A;
+            width: 300px;
+            float: right;
+        }
+
+        .효자 {clear: both;}
+
+        .동생 {background-color: #0A1D56; width: 1000px; margin: 100px auto 0;}
+        .동생 .동생자식{width: 300px; height: 300px; float: left; background-color: #492E87;}
+        .동생>.원이{margin-right: 10px;}
+        .동생>.두이{margin-right: 10px;}
+        .동생>.삼이 img{width: 100%; height: 90%;}
+
+        .영역{background-color: #9DBC98;}
+        .영역 .세아들{background-color: #638889;}
+        .영역 .세아들 em{background-color: #EBD9B4; width: 20px;}
+        .영역 .세아들 strong{background-color: #3E3232; width: 50px;
+            display: inline-block;}
+           /*  strong속성이 원래 inline이라서 width를 넣어도 아무 변화가 없었을 것이다. 
+            근데 display:inline-block을 넣어주면서 블록 속성을 가지게 되어 width값을 넣으면 적용이된다. */
+        
+        .막내 .갑이{width: 25%; background-color: #FB88B4; float: left;}
+        .막내 .을이{width: 25%; background-color: #0A1D56; float: left;}
+        .막내 .병이{width: 25%; background-color: #FB88B4; float: left;}
+        .막내 .정이{width: 25%; background-color: #0A1D56; float: left;}
+        .막내 ::after{content: ""; clear: both; display: block;}
+    </style>
+</head>
+<body>
+    <h2>입력 양식 데이터 전송 버튼</h2>
+    <form>
+        <h3>◆당신의 성별은 무엇입니까?</h3>
+        <input type="radio" name="sex" value="male" checked>남자
+        <input type="radio" name="sex" value="female">여자
+        <p></p>
+
+        <h3>◆당신은 몇 학년입니까?</h3>
+        <input type="radio" name="year" value="1" checked>1학년
+        <input type="radio" name="year" value="2">2학년
+        <input type="radio" name="year" value="3">3학년
+        <input type="radio" name="year" value="4">4학년
+        <p></p>
+
+        <h3>◆현재 관심을 가지고 있는 학습 주제는 무엇입니까?</h3>
+        <input type="checkbox" name="subject" value="HTML5" checked>HTML5 <br>
+        <input type="checkbox" name="subject" value="CSS3">CSS3 <br>
+        <input type="checkbox" name="subject" value="Javascript">Javascript <br>
+        <input type="checkbox" name="subject" value="Jqery">Jqery <br>
+        <p></p>
+    </form>
+
+    <form action="page.jsp" method="get">
+        <p>ID : <input type="text" name="ID" size="15" required></p>
+        <p>PW : <input type="password" name="psw" size="15" placeholder="비번을 입력하세요." required></p>
+        <!-- required 는 입력 폼에 반드시 데이터를 입력하도록 요구하는 속성이다. -->
+        <!-- placeholder 속성은 미리 데이터를 입력해놓는 역할을 한다.
+        value속성과 기능이 같지만 차이점은 지우지 않아도 자동삭제된다. -->
+        <p>이름 : <input type="text" name="name"></p>
+        <p>학번 : <input type="text" name="name" size="10" value=""></p>
+        <p>학과 : <input type="text" name="major"></p>
+        <p></p>
+        <input type="submit" value="전송">
+        <input type="reset" value="다시작성">
+    </form>
+
+    <div class="A 부모">
+        <div class="B 일동">일동</div>
+        <div class="C 이동">이동</div>
+        <div class="D 삼동">삼동</div>
+        <div class="E 효자"></div>
+    </div>
+
+    <div class="B 동생">
+        <div class="동생자식 원이">원이</div>
+        <div class="동생자식 두이">두이</div>
+        <div class="동생자식 삼이">삼이
+            <img src="https://cdn.wedding21.co.kr/news/photo/201812/20181213_1_103036.jpg" alt="이미지 오류">
+        </div>
+    </div>    
+
+    <div class="C 영역">
+        <div class="세아들">
+        <em>세 명의<strong>착한</strong>아들이 있어요.</em>
+        </div>
+    </div>
+
+    <div class="막내 약">
+        <div class="귀여운 갑이">갑이</div>
+        <div class="귀여운 을이">을이</div>
+        <div class="귀여운 병이">병이</div>
+        <div class="귀여운 정이">정이</div>
+    </div>
+</body>
+</html>

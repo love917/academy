@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/* 기본설정 */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+li{list-style: none;}
+a{text-decoration: none; color: #fff;}
+body{
+    background-color: var(--main-bg-color);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* 🔍<CSS 변수만들기>
+🤍규칙
+--(하이퍼) 를 변수명 앞에 붙인다.
+--변수명:변수에 넣을 내용;
+
+🤍변수 사용하기
+color:var(--변수명)
+
+let 변수명 = 20;
+*/
+
+:root{
+    --main-bg-color : #222;
+    --main-div-color : #131313;
+    --width:95%;
+    --max-width:1600px;
+    --border-radius:20px;
+}
+
+h1{
+    font-size: 7vw; /* vw:화면의 넓이에 따라 폰트 사이즈가 달라진다. */
+    /* font-size: clamp(최소값,기본값,최대값); --> 폰트사이즈를 한정함(limited) */
+    font-size: clamp(32px,7vw,72px);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0; /* 16px --> 1rem */
+}
+#hero{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* 화면이 중간으로 들어옴 */
+}
+
+.container{
+    width: var(--width);
+    max-width: var(--max-width);
+    background-color: var(--main-div-color);
+    padding:2rem;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+.hero_text .sub_header{display:flex; align-items: center; gap: 0.5rem;}
+.hero_text .sub_header .circle{
+    width: 0.5rem; height: 0.5rem;
+    background-color: rgb(235, 132, 149);
+    border-radius: 50%;
+}
+.nav_container{
+    display:flex;
+    justify-content: flex-end;}
+.nav_container nav{width: 450px;}
+.nav_container nav ul{
+    display: flex;
+    justify-content:space-between
+}
+.sub_header h4{font-weight: bold;}
+.hero_header{width: 80%;margin-bottom: 1rem;} 
+.hero_intro{
+    width: 40%;
+    opacity: 0.8;}
+
+
+/* .carousel */
+.carousel{overflow: hidden; position: relative;}
+.carousel .left_carousel{
+    background: yellow ;
+    background: linear-gradient(90deg,var(--main-div-color),transparent);
+    width: 30%; height: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    z-index: 10;
+}
+.carousel .right_carousel{
+    width: 30%; height: 100%;
+    position: absolute;
+    right: 0; top: 0;
+    z-index: 10;
+    background: linear-gradient(270deg,var(--main-div-color),transparent);
+}
+.right_carousel{}
+.carousel .carousel_innner{
+    display: flex;
+    width: 200%;
+    animation: marque 10s linear infinite;/* linear:시간을 동등하게 나오게 함 */
+}
+.carousel .carousel_innner:hover{
+    animation-play-state: paused;
+}
+
+.carousel .carousel_innner .item{
+    width: 0;
+    flex-grow: 1;/* 늘어나라 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel .carousel_innner .item img{width: 60%;}
+@keyframes marque{
+    0%{transform: translateX(0);}
+    100%{transform: translateX(-50%);} /* 내 몸의 반만큼 움직이게 함 */
+}
+
+/* bottom */
+.bottom_div{
+    position: relative;
+    width: var(--width);
+    max-width: var(--max-width);
+    padding-top: 30px;
+}
+.bottom_div .left{
+    position: absolute;top: 0;left: 0;
+    width: 50%;height:100%;
+}
+.bottom_div .left .curve{
+    width: 100%;height:100%;
+    position: absolute; top: 0;left: 0;
+    background-color: var(--main-bg-color);
+    border-top-right-radius: var(--border-radius);
+    z-index: 5;
+}
+.bottom_div .left .cover{
+    width: 100%;height:100%;
+    position: absolute; top: 0;left: 0;
+    background-color: var(--main-div-color);
+}
+
+.bottom_div .right{
+    width: 50%; /* 높이는 자식 따라가게 함 */
+    position: absolute; top: 0;left: 50%;
+    background-color: var(--main-div-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    padding: 1rem;
+}
+.bottom_div .services{
+    width: 100%; padding: 1rem;
+    text-align: center;
+    background-color: var(--main-bg-color);
+    border-radius: calc(var(--border-radius) - 1rem); /* 20px - 1rem */
+}
+.bottom_div .services h5{}
